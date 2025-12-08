@@ -1,12 +1,14 @@
 const activityRouter = require("express").Router();
 let activities = []; //temporery db
+const middleware = require("../utils/midleware");
 
 const createId = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
 //get endpoint => res all activities
-activityRouter.get("/", (req, res) => {
+activityRouter.get("/", middleware.userExtractor, (req, res) => {
+  console.log(req.user);
   res.status(200).json(activities);
 });
 
@@ -56,12 +58,12 @@ activityRouter.get("/:id", (req, res) => {
 });
 
 //delete endpoint => delete activity
-activityRouter.delete("/:id", (req,res)=>{
-  const id = req.params.id
+activityRouter.delete("/:id", (req, res) => {
+  const id = req.params.id;
   const newActivities = activities.filter((elem) => {
     return elem.id != id;
   });
-  activities = newActivities
-  res.status(204).end()
-})
+  activities = newActivities;
+  res.status(204).end();
+});
 module.exports = activityRouter;
