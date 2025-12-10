@@ -7,7 +7,7 @@ const mongoose = require("mongoose").default;
 const config = require("./utils/config");
 const logger = require("./utils/logger");
 const cors = require("cors");
-const userRouter = require("./controllers/users");
+const userRouter = require("./controllers/users-controller");
 
 
 mongoose.set("strictQuery", false);
