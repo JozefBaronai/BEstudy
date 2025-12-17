@@ -1,4 +1,4 @@
-require("express-async-errors")
+require("express-async-errors");
 const express = require("express");
 const app = express();
 const activityRouter = require("./controllers/activities");
@@ -9,14 +9,13 @@ const logger = require("./utils/logger");
 const cors = require("cors");
 const userRouter = require("./controllers/users-controller");
 
-
 mongoose.set("strictQuery", false);
 mongoose
   .connect(config.MONGO_URL)
   .then(() => {
     logger.info("connected to mongo db!");
-    console.log("connected")
-  }) 
+    console.log("connected");
+  })
   .catch((error) => {
     logger.error(error.message);
   });
@@ -34,5 +33,5 @@ app.get("/", (req, res) => {
   res.send("ping");
 });
 app.use(middleware.errorHandler);
-//for error handler is best practice to call last..  
+//for error handler is best practice to call last..
 module.exports = app;
