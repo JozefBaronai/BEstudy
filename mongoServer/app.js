@@ -1,7 +1,7 @@
 require("express-async-errors");
 const express = require("express");
 const app = express();
-const activityRouter = require("./controllers/activities");
+const activityRouter = require("./controllers/activities-controller");
 const middleware = require("./utils/midleware");
 const mongoose = require("mongoose").default;
 const config = require("./utils/config");

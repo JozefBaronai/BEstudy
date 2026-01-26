@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+
+    "noImplicitAny": false,
+    "strict": false,
+
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  }
+}
