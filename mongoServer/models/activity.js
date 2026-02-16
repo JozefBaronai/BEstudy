@@ -1,4 +1,4 @@
-const mongoose = require("mongoose").default
+const mongoose = require("mongoose").default;
 
 const activityModel = new mongoose.Schema(
   {
@@ -23,8 +23,8 @@ const activityModel = new mongoose.Schema(
   {
     timestamps: true,
   },
-)
+);
 
-const Activity = mongoose.model("Activity", activityModel)
+const Activity = mongoose.model("Activity", activityModel);
 
-module.exports = Activity
+module.exports = Activity;

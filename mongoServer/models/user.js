@@ -1,4 +1,4 @@
-const mongoose = require("mongoose").default
+const mongoose = require("mongoose").default;
 
 const userModel = new mongoose.Schema(
   {
@@ -22,14 +22,14 @@ const userModel = new mongoose.Schema(
   {
     timestamps: true,
   }
-)
+);
 
 //when app converts the user to json it deletes password so its not visible
 userModel.set("toJSON", {
   transform: (_document, returnedObject) => {
-    delete returnedObject.password
+    delete returnedObject.password;
   },
-})
-const User = mongoose.model("User", userModel)
+});
+const User = mongoose.model("User", userModel);
 
-module.exports = User
+module.exports = User;
