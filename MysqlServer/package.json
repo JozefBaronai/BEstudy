@@ -1,0 +1,33 @@
+{
+  "name": "mongoserver",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=prod nodemon index.js",
+    "start:test": "cross-env NODE_ENV=test node index.js",
+    "test": "cross-env NODE_ENV=test node --test --test-concurrency=1",
+    "test:file":"cross-env NODE_ENV=test node --test --test-concurrency=1" 
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@sequelize/core": "^7.0.0-alpha.48",
+    "@sequelize/mysql": "^7.0.0-alpha.48",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@stylistic/eslint-plugin-js": "^4.4.1",
+    "cross-env": "^10.1.0",
+    "eslint": "^9.39.2",
+    "globals": "^17.3.0",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.1.4"
+  }
+}
